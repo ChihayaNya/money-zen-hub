@@ -24,9 +24,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				surface: 'hsl(var(--surface))',
+				'surface-elevated': 'hsl(var(--surface-elevated))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -35,6 +39,26 @@ export default {
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				income: {
+					DEFAULT: 'hsl(var(--income))',
+					foreground: 'hsl(var(--income-foreground))'
+				},
+				expense: {
+					DEFAULT: 'hsl(var(--expense))',
+					foreground: 'hsl(var(--expense-foreground))'
+				},
+				savings: {
+					DEFAULT: 'hsl(var(--savings))',
+					foreground: 'hsl(var(--savings-foreground))'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',

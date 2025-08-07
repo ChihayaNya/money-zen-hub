@@ -2,39 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Sistema de diseño para control de gastos - Colores HSL únicamente */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Backgrounds y superficies */
+    --background: 210 20% 98%;
+    --foreground: 210 24% 16%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 210 17% 98%;
 
+    /* Sistema de tarjetas */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 24% 16%;
 
+    /* Popover y overlays */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Colores primarios - Verde esmeralda para finanzas */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 84% 55%;
+    --primary-dark: 160 84% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Colores secundarios - Azul para neutralidad */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 210 24% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Estados y utilidades */
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 214 100% 97%;
+    --accent-foreground: 210 24% 16%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Sistema de alertas financieras */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Colores específicos para finanzas */
+    --income: 160 84% 39%;
+    --income-foreground: 0 0% 100%;
+    --expense: 0 84% 60%;
+    --expense-foreground: 0 0% 100%;
+    --savings: 160 84% 55%;
+    --savings-foreground: 0 0% 100%;
+
+    /* Gradientes financieros */
+    --gradient-income: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 55%));
+    --gradient-expense: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 55%));
+    --gradient-dashboard: linear-gradient(135deg, hsl(210 20% 98%), hsl(214 32% 91%));
+
+    /* Sombras elegantes */
+    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-income: 0 8px 25px -8px hsl(160 84% 39% / 0.3);
+    --shadow-expense: 0 8px 25px -8px hsl(0 84% 60% / 0.3);
+
+    /* Bordes y inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
 
     --radius: 0.5rem;
 
@@ -56,33 +91,70 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Backgrounds oscuros para finanzas */
+    --background: 210 24% 12%;
+    --foreground: 210 17% 98%;
+    --surface: 210 24% 16%;
+    --surface-elevated: 210 24% 20%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Sistema de tarjetas oscuro */
+    --card: 210 24% 16%;
+    --card-foreground: 210 17% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Popover oscuro */
+    --popover: 210 24% 16%;
+    --popover-foreground: 210 17% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primarios en modo oscuro */
+    --primary: 160 84% 55%;
+    --primary-foreground: 210 24% 12%;
+    --primary-light: 160 84% 65%;
+    --primary-dark: 160 84% 35%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secundarios oscuros */
+    --secondary: 210 24% 20%;
+    --secondary-foreground: 210 17% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Estados oscuros */
+    --muted: 210 24% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 24% 20%;
+    --accent-foreground: 210 17% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Alertas oscuras */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 160 84% 55%;
+    --success-foreground: 210 24% 12%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 24% 12%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Finanzas en oscuro */
+    --income: 160 84% 55%;
+    --income-foreground: 210 24% 12%;
+    --expense: 0 84% 60%;
+    --expense-foreground: 0 0% 98%;
+    --savings: 160 84% 65%;
+    --savings-foreground: 210 24% 12%;
+
+    /* Gradientes oscuros */
+    --gradient-income: linear-gradient(135deg, hsl(160 84% 55%), hsl(160 84% 65%));
+    --gradient-expense: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 50%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 55%), hsl(160 84% 65%));
+    --gradient-dashboard: linear-gradient(135deg, hsl(210 24% 12%), hsl(210 24% 16%));
+
+    /* Sombras oscuras */
+    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.4), 0 1px 2px 0 hsl(0 0% 0% / 0.24);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.24);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-income: 0 8px 25px -8px hsl(160 84% 55% / 0.4);
+    --shadow-expense: 0 8px 25px -8px hsl(0 84% 60% / 0.4);
+
+    /* Bordes oscuros */
+    --border: 210 24% 20%;
+    --input: 210 24% 20%;
+    --ring: 160 84% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +172,76 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Utilidades financieras */
+  .gradient-income {
+    background: var(--gradient-income);
+  }
+
+  .gradient-expense {
+    background: var(--gradient-expense);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-dashboard {
+    background: var(--gradient-dashboard);
+  }
+
+  .shadow-income {
+    box-shadow: var(--shadow-income);
+  }
+
+  .shadow-expense {
+    box-shadow: var(--shadow-expense);
+  }
+
+  /* Animaciones suaves */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Transiciones suaves */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
